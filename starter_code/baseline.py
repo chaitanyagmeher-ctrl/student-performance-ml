@@ -7,8 +7,8 @@ import joblib
 import os
 
 # 1. Load Data
-train_df = pd.read_csv('data/train.csv')
-test_df  = pd.read_csv('data/test.csv')
+train_df = pd.read_csv('../data/train.csv')
+test_df  = pd.read_csv('../data/test.csv')
 
 # 2. Create Target Variable (Pass=1 if result>=10, Fail=0)
 # Already present as 'result' column in train.csv
@@ -44,8 +44,8 @@ print(f"Baseline F1-Score:  {f1_score(y_val, predictions):.4f}")
 print(classification_report(y_val, predictions))
 
 # 8. Save Model
-os.makedirs('models', exist_ok=True)
-joblib.dump(model, 'models/baseline_student_model.pkl')
+os.makedirs('../models', exist_ok=True)
+joblib.dump(model, '../models/baseline_student_model.pkl')
 print("✅ Model saved to models/baseline_student_model.pkl")
 
 # 9. Generate Submission File
